@@ -7,7 +7,7 @@ layout: default
   [{{ page.url }}]({{ page.url | relative_url }}) 🔀 `{{ page.redirect_to }}` <small>{{ page.title | escape }}</small>
 
 {% for from in page.redirect_from %}
-  [{{ from.url }}]({{ from.url | relative_url }}) 🔀 `{{ page.redirect_to }}` <small>{{ page.title | escape }}</small>
+  [{{ from }}]({{ from | relative_url }}) 🔀 `{{ page.redirect_to }}` <small>{{ page.title | escape }}</small>
 {% endfor %}
   ---
 {% endfor %}
