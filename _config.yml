@@ -5,6 +5,5 @@ timezone: Asia/Kolkata
 google_analytics: UA-63845590-5
 theme: jekyll-theme-cayman
 permalink: /:slug/
-safe: false
 plugins:
   - jekyll-redirect-from
