@@ -7,10 +7,14 @@ layout: default
 <strong>{{ page.title | escape }}</strong>
 `{{ page.redirect_to }}` 
     <ul>
-        <li> [{{ page.url }}]({{ page.url | relative_url }}) </li>
+        <li> 
+           [{{ page.url }}]({{ page.url | relative_url }})
+        </li>
         <ul>
             {% for from in page.redirect_from %}
-             <li> [{{ from }}]({{ from | relative_url }}) </li> 
+             <li> 
+                [{{ from }}]({{ from | relative_url }})
+            </li> 
             {% endfor %}
         </ul>
     </ul>
