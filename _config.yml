@@ -1,7 +1,7 @@
 title: Personal URL shortener
 description: ✂️🔗 This repo contains all the urls that i like to redirect.
 show_downloads: true
-google_analytics:
+google_analytics: UA-63845590-5
 theme: jekyll-theme-minimal
 permalink: /:slug/
 plugins:
