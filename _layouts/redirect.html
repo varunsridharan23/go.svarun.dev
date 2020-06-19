@@ -13,9 +13,31 @@
   <meta charset="utf-8">
   <title>Redirecting&hellip;</title>
   <link rel="canonical" href="{{ page.redirect.to }}">
-  <script>location="{{ page.redirect.to }}"</script>
+  <script>
+//	  location="{{ page.redirect.to }}"
+  </script>
+
+  <script type="text/javascript">
+	  const queryString = window.location.search;
+	  const urlParams = new URLSearchParams(queryString);
+	  /**
+	   * @type {string}
+	   */
+	  const expression = urlParams.get('e');
+	  if (expression && expression.trim() !== '') {
+		  const newUrl = `{{ page.redirect.to }}/${expression}`;
+		  console.log(`Redirect user to ${newUrl}`);
+		  setTimeout(() => {
+			  window.location = newUrl;
+		  }, 2000);
+	  }
+	  console(expression);
+	  console(expression.trim());
+  </script>
+
   <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
   <meta name="robots" content="noindex">
+
   <h1>Redirecting&hellip;</h1>
   <a href="{{ page.redirect.to }}">Click here if you are not redirected.</a>
 </html>
