@@ -19,20 +19,12 @@
 <link rel="canonical" href="{{ page.redirect.to }}">
 
 <script type="text/javascript">
-	const queryString = window.location.search;
-	const urlParams   = new URLSearchParams( queryString );
-	/**
-	 * @type {string}
-	 */
-	const expression  = urlParams.get( 'q' );
+	var urlParams  = new URLSearchParams( window.location.search );
+	let expression = urlParams.get( 'q' );
 	if( expression && expression.trim() !== '' ) {
-		var newurl   = '{{ page.redirect.to }}';
-		newurl       = newurl.trim( '/' );
-		const newUrl = newurl + `/${expression}`;
-		console.log( `Redirect user to ${newUrl}` );
-		setTimeout( () => {
-			window.location = newUrl;
-		}, 2000 );
+		window.location = '{{ page.redirect.to }}' + `/${expression}`;
+	} else {
+		location = '{{ page.redirect.to }}';
 	}
 </script>
 
