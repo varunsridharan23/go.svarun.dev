@@ -21,7 +21,9 @@ TEXT;
 				'{redirect_to}',
 				'{redirect_from}',
 			), array( $item['name'], $url, $redirect_from ), $content );
-			file_put_contents( SAVE_PATH . $slug . '.md', $content );
+			if ( ! file_put_contents( SAVE_PATH . $slug . '.md' ) ) {
+				file_put_contents( SAVE_PATH . $slug . '.md', $content );
+			}
 		}
 	}
 } catch ( Exception $exception ) {
