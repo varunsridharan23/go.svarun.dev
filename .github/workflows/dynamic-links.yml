@@ -1,0 +1,35 @@
+name: On Push
+
+on:
+  schedule:
+    - cron: '*/60 * * * *'
+  push:
+    branches:
+      - master
+
+jobs:
+  Dynamic_Links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📩 Fetching Repository
+        uses: actions/checkout@v2
+      - name: 💽 Installing PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: '7.2'
+      - name: ⚒️Generating Envato Links
+        run: |
+          php .github/custom-scripts/envato.php
+      - name: 🚀 Publishing To Github
+        run: |
+          git config --global user.email "githubactionbot+envato@gmail.com" && git config --global user.name "Envato Items Links Updated !"
+          if [ "$(git status ./envato/ --porcelain)" != "" ]; then
+            echo "👌 Envato Items Link Updated"
+            git add ./envato/.
+            git commit -m "📖 #$GITHUB_RUN_NUMBER - Envato Items Link Updated / ⚡ Triggered By $GITHUB_SHA"
+            git push origin
+          else
+            echo "✅ Nothing To Create"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
