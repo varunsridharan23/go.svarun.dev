@@ -14,13 +14,15 @@ layout: default
 {% assign redirects = site.pages | where_exp: "item", "item.redirect_to != nil" %}
 {% for page in redirects %}
 <tr>
-<td>**{{ page.title | escape }}**</td>
-<td>`{{ page.redirect_to }}`</td> 
+<td><strong>{{ page.title | escape }}</strong></td>
+<td><code>{{ page.redirect_to }}</code></td> 
 <td>
-* [{{ page.url }}]({{ page.url | relative_url }})
-{% for from in page.redirect_from %} 
-* [{{ from }}]({{ from | relative_url }})
-{% endfor %} 
+<ul>
+    <li><a href="{{ page.url | relative_url }}">{{ page.url }}</a></li>
+    {% for from in page.redirect_from %} 
+     <li><a href="{{ from | relative_url }}">{{ from }}</a></li>
+    {% endfor %} 
+</ul>
 </td>
 </tr>
 {% endfor %}
