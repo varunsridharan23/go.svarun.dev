@@ -5,7 +5,6 @@ layout: default
     <thead>
         <tr>
             <th>Name</th>
-            <th>Redirects To</th>
             <th>Short Urls</th>
         </tr>
     </thead>
@@ -14,8 +13,7 @@ layout: default
 {% assign redirects = site.pages | where_exp: "item", "item.redirect_to != nil" %}
 {% for page in redirects %}
 <tr>
-<td><strong>{{ page.title | escape }}</strong></td>
-<td><code>{{ page.redirect_to }}</code></td> 
+<td><a href="{{ page.redirect_to }}"> <strong>{{ page.title | escape }}</strong></a></td>
 <td>
 <ul>
     <li><a href="{{ page.url | relative_url }}">{{ page.url }}</a></li>
