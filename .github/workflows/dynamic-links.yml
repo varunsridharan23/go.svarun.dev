@@ -36,7 +36,7 @@ jobs:
           fi
 
           git config --global user.email "githubactionbot+wp@gmail.com" && git config --global user.name "WordPress Plugins Links Updated !"
-          if [ "$(git status ./envato/ --porcelain)" != "" ]; then
+          if [ "$(git status ./wp/ --porcelain)" != "" ]; then
             echo "👌 WordPress Plugins Link Updated"
             git add ./wp/.
             git commit -m "📖 #$GITHUB_RUN_NUMBER - WordPress Plugins Link Updated / ⚡ Triggered By $GITHUB_SHA"
