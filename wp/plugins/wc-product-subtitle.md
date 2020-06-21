@@ -1,5 +1,9 @@
 ---
 title: Product Subtitle For WooCommerce
-permalink: /wp/plugins/psfwc/
-redirect_to: https://wordpress.org/plugins/wc-product-subtitle/
+redirect_from:
+    - /wc-product-subtitle/
+    - /wcps/
+    - /wp/plugins/wc-product-subtitle/
+    - /wp/plugins/wcps/
+redirect_to: https://wordpress.org/plugins/wc-product-subtitle
 ---
