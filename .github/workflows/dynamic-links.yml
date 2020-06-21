@@ -20,6 +20,9 @@ jobs:
       - name: ⚒️Generating Envato Links
         run: |
           php .github/custom-scripts/envato.php
+      - name: ⚒️Generating WordPress Links
+        run: |
+          php .github/custom-scripts/wordpress.php
       - name: 🚀 Publishing To Github
         run: |
           git config --global user.email "githubactionbot+envato@gmail.com" && git config --global user.name "Envato Items Links Updated !"
