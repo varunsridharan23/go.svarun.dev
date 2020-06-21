@@ -15,3 +15,15 @@
     display: none;
   }
 }
+
+.main-content {
+  table {
+    display: table;
+
+    tr {
+      ul {
+        margin: 10px 0;
+      }
+    }
+  }
+}
