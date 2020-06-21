@@ -1,0 +1,17 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+  padding: 2rem 6rem;
+
+  > h2 {
+    margin-bottom: 0;
+    margin-top:    10px;
+  }
+
+  > a {
+    display: none;
+  }
+}
