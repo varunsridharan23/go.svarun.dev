@@ -12,9 +12,6 @@ try {
 			$mini_slug     = $item['mini_slug'];
 			$redirect_from = <<<TEXT
     - /${slug}/
-    - /${mini_slug}/
-    - /wp/plugins/${slug}/
-    - /wp/plugins/${mini_slug}/
 TEXT;
 			$content       = str_replace( array(
 				'{item_title}',
