@@ -24,6 +24,7 @@ TEXT;
 					'{redirect_to}',
 					'{redirect_from}',
 				), array( $item['name'], $url, $redirect_from ), $content );
+				@mkdir( SAVE_PATH, '0777', true );
 				if ( ! file_exists( SAVE_PATH . $id . '.md' ) ) {
 					file_put_contents( SAVE_PATH . $id . '.md', $content );
 				}
