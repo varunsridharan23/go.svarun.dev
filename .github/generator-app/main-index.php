@@ -112,6 +112,7 @@
 	}
 
 </style>
+<title>Personal URL Shortener / Redirector</title>
 <section class="page-header">
 	<h1 class="project-name">Personal URL Shortener / Redirector</h1>
 </section>
