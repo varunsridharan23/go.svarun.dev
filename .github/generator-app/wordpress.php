@@ -12,13 +12,12 @@ try {
 			$redirect_from = array( "/${slug}/" );
 
 			@mkdir( SAVE_PATH, 0777, true );
-			if ( ! file_exists( SAVE_PATH . $slug . '.json' ) ) {
-				file_put_contents( SAVE_PATH . $slug . '.json', json_encode( array(
-					$item['name'],
-					$url,
-					$redirect_from,
-				) ) );
-			}
+
+			file_put_contents( SAVE_PATH . $slug . '.json', json_encode( array(
+				$item['name'],
+				$url,
+				$redirect_from,
+			) ) );
 		}
 	}
 } catch ( Exception $exception ) {
