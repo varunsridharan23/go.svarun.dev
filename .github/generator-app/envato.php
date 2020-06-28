@@ -36,7 +36,7 @@ try {
 				) ) );
 
 				file_put_contents( SAVE_PATH . '/docs/' . $id . '.json', json_encode( array(
-					$item['name'],
+					'Docs | ' . $item['name'],
 					$docs,
 					array(
 						"/${slug}/docs/",
