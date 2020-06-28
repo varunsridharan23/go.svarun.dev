@@ -1,0 +1,27 @@
+name: On Push
+
+on:
+  schedule:
+    - cron: '*/60 * * * *'
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/on-push.yml'
+      - '.github/generator-app/*.*'
+      - '**.json'
+
+jobs:
+  Dynamic_Links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📩 Fetching Repository
+        uses: actions/checkout@v2
+      - name: 💽 Installing PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: '7.2'
+      - name: ⚒️ Generating Envato Links
+        run: sh .github/generator-app/entrypoint.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
