@@ -36,9 +36,11 @@ else
   echo "##[endgroup]"
 fi
 
+cp $PUSH_TO_BRANCH/CNAME /
 rm -rf $PUSH_TO_BRANCH/*
 cp -r $GITHUB_WORKSPACE/output_html/* $PUSH_TO_BRANCH/
 cd $PUSH_TO_BRANCH/
+cp /CNAME /$PUSH_TO_BRANCH
 
 if [ "$(git status --porcelain)" != "" ]; then
   echo "##[group] 👌 Website Published"
