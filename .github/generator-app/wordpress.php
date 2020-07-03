@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/common.php';
 define( 'SAVE_PATH', URLS_FILES . 'wp/plugins/' );
-define( 'ITEMS_JSON_LINK', 'https://cdn.svarun.dev/wordpress.org/plugins.json' );
+define( 'ITEMS_JSON_LINK', 'https://cdn.svarun.dev/json/wordpress-org-items.json' );
 try {
 	$json = json_decode( file_get_contents( ITEMS_JSON_LINK ), true );
 	if ( is_array( $json ) ) {
