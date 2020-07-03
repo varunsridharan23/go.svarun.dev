@@ -2,7 +2,7 @@
 require_once __DIR__ . '/common.php';
 
 define( 'SAVE_PATH', URLS_FILES . 'envato/' );
-define( 'ITEMS_JSON_LINK', 'https://cdn.svarun.dev/envato/items.json' );
+define( 'ITEMS_JSON_LINK', 'https://cdn.svarun.dev/json/envato-items.json' );
 try {
 	$json = json_decode( file_get_contents( ITEMS_JSON_LINK ), true );
 	if ( isset( $json['plugins'] ) ) {
